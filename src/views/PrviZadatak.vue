@@ -3,16 +3,15 @@
 		<v-row>
 			<v-col cols="12">
 				<v-card class="pa-3" outlined width="600px">
-					<v-card-title></v-card-title>
+					<v-card-title>Register</v-card-title>
 					<v-card-text>
-						<v-form></v-form>
+						<v-form v-model="valid">
+							<v-card-text-filed v-model="firstName" dense label="Name" clearble type="text" outlined>
+							</v-card-text-filed>
+						</v-form>
 					</v-card-text>
 					<v-card-actions>
-						<v-btn
-							color="black"
-							class="white--text"
-							elevation="0"
-							@click="obrisiSveUnesenePodatke">
+						<v-btn color="black" class="white--text" elevation="0" @click="obrisiSveUnesenePodatke">
 							BRISI PODATKE
 						</v-btn>
 						<v-spacer></v-spacer>
@@ -31,7 +30,7 @@ export default {
 	},
 	watch: {},
 	methods: {
-		ocistiFormu() {},
+		ocistiFormu() { },
 		dodajStudenta() {
 			let noviStudent = {
 				//Dodaj propertyje
