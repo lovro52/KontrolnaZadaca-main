@@ -23,19 +23,17 @@
 								:rules="[rules.required, rules.max20]" outlined></v-text-field>
 						</v-form>
 					</v-card-text>
-					<v-card-actions class="card-actions">
+					<v-card-actions>
+						<v-btn color="black" class="white--text" elevation="0" @click="obrisiSveUnesenePodatke">
+							BRISI PODATKE
+						</v-btn>
+						<v-spacer></v-spacer>
 						<v-btn class="btn-right-margin" @click="ocistiFormu" color="red darken-3" outlined>
 							CLEAR
 						</v-btn>
 						<v-btn :disabled="isButtonDisabled" outlined @click="registerUser">
 							OK
 						</v-btn>
-					</v-card-actions>
-					<v-card-actions>
-						<v-btn color="black" class="white--text" elevation="0" @click="obrisiSveUnesenePodatke">
-							BRISI PODATKE
-						</v-btn>
-						<v-spacer></v-spacer>
 					</v-card-actions>
 				</v-card>
 			</v-col>
@@ -83,6 +81,12 @@ export default {
 		dodajStudenta() {
 			let noviStudent = {
 				//Dodaj propertyje
+				ime: this.firstName,
+				prezime: this.lastName,
+				brojDolazaka: this.brojDolazaka,
+				prviKolokvij: this.rezultatPrvogKolokvija,
+				drugiKolokvij: this.rezultatDrugogKolokvija,
+				kontinuiranoPracenje: this.kontinuiranoPracenje,
 			};
 			//ovo ne diraj
 			let studenti = JSON.parse(localStorage.getItem("studenti"));
